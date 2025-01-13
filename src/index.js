@@ -1,6 +1,9 @@
-import PROJECT from "./CLASSES/PROJECT.JS";
+import './styles.css';
+import openModal from './modal-fns/openModal.js';
+import goHome from './pageHandler-fns/goHome.js';
 
-let project = new PROJECT();
+const addProject = document.getElementById('addBtn');
+const homePage = document.getElementById('HomePage');
 
-project.addToDo('todoone','create stuff','1/19/2025','max');
-project.addToDo('todotwo','create stuff','1/21/2025','min');
+addProject.addEventListener('click',(e)=>{openModal('project')});
+homePage.addEventListener('click',(e)=>{goHome()});
