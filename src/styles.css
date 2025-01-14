@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+/* The css below will handle some properties on the modal area to make it work correctly */
+#modal {
+    display: none;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
