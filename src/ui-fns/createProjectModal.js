@@ -1,3 +1,5 @@
+import closeModal from "../modal-fns/closeModal.js";
+
 export default function createProjectModal(){
     // Create all the elements for the modal box
     const modalBox = document.createElement('div');
@@ -31,17 +33,31 @@ export default function createProjectModal(){
     formBox.style.display = 'grid';
     formBox.style.height = '50vh';
     formBox.style.border = '1px solid white';
-    formBox.style.padding = '10px';
+    formBox.style.borderRadius = '10px';
+    formBox.style.padding = '0px 10px 10px 10px';
+    formBox.style.backgroundColor = 'brown';
+    formBox.style.boxShadow = '2px 2px yellow'
+    formBox.setAttribute('id','submitProject');
     exitModal.style.paddingRight = '5px';
     exitModal.style.display = 'grid';
     exitModal.style.justifyContent = 'end';
-    title.style.fontSize = '34px';
+    exitModal.style.fontSize = '18px';
+    exitModal.style.cursor = 'pointer';
+    exitModal.setAttribute('id','exitProjectModal');
+    title.style.fontSize = '30px';
     title.style.padding = '0';
     title.style.margin = '0';
     title.style.textAlign = 'center'
     submitBtn.type = 'submit';
+    submitBtn.style.width = '50%';
+    submitBtn.style.display = 'grid';
+    submitBtn.style.justifySelf = 'center';
+    submitBtn.style.cursor = 'pointer';
+    labelDescription.style.display = 'grid';
+    inputDescription.style.marginBottom = '10px'
     // Add event listeners to the form
-
+    exitModal.addEventListener('click',()=>{closeModal('project')});
+    formBox.addEventListener('submit',(e)=>{e.preventDefault();submitModal('project',new FormData(formBox));});
     // Append everything together
     labelProjName.appendChild(inputProjName);
     labelCreatorName.appendChild(inputCreatorName);
