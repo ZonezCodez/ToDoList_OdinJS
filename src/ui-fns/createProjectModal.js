@@ -1,4 +1,5 @@
 import closeModal from "../modal-fns/closeModal.js";
+import submitModal from "../modal-fns/submitModal.js";
 
 export default function createProjectModal(){
     // Create all the elements for the modal box
@@ -55,6 +56,19 @@ export default function createProjectModal(){
     submitBtn.style.cursor = 'pointer';
     labelDescription.style.display = 'grid';
     inputDescription.style.marginBottom = '10px'
+    // Adds tags to everything needed to get form answers
+    labelProjName.setAttribute('for','projName');
+    inputProjName.setAttribute('name','projName');
+    labelCreatorName.setAttribute('for','creatorName');
+    inputCreatorName.setAttribute('name','creatorName');
+    labelDue.setAttribute('for','due');
+    inputDue.setAttribute('name','due');
+    labelDescription.setAttribute('for','desc');
+    inputDescription.setAttribute('name','desc');
+    inputProjName.required = 'true';
+    inputCreatorName.required = 'true';
+    inputDue.required = 'true';
+    inputDescription.required = 'true';
     // Add event listeners to the form
     exitModal.addEventListener('click',()=>{closeModal('project')});
     formBox.addEventListener('submit',(e)=>{e.preventDefault();submitModal('project',new FormData(formBox));});

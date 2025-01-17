@@ -4,6 +4,7 @@ import goHome from './pageHandler-fns/goHome.js';
 
 const addProject = document.getElementById('addBtn');
 const homePage = document.getElementById('HomePage');
+export const projects = [];
 
 addProject.addEventListener('click',(e)=>{openModal('project')});
 homePage.addEventListener('click',(e)=>{goHome()});
