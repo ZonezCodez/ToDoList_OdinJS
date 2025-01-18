@@ -1,4 +1,5 @@
 import TODO from "./TODO.js";
+import createProjectUI from "../ui-fns/createProjectUI.js";
 
 export default class PROJECT{
     constructor(projName,creator,dateAdded,dateDue,todos,description){
@@ -8,7 +9,6 @@ export default class PROJECT{
         this.due = dateDue;
         if(todos){this.todos = todos}else{this.todos = []};
         if(description){this.desc = description}else{this.desc = 'Enter Project Description Here!'};
-        this.size = 0;
     };
     // Methods that can be called on this class
     addToDo(title,content,dueBy,prio){
@@ -27,6 +27,7 @@ export default class PROJECT{
     }
 
     render(){
-        
+        return createProjectUI(this);
     }
+
 }

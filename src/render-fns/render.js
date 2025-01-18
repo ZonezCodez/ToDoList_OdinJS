@@ -1,7 +1,9 @@
 export default function render(string,data){
+    const contentArea = document.getElementById('content');
+
     if(string === 'projects'){
         data.forEach(project => {
-            project.render();
+          contentArea.appendChild(project.render());  
         });
     }else if(string === 'todos'){
 
