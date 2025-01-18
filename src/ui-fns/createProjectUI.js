@@ -5,10 +5,12 @@ export default function createProjectUI(project){
     const cardCreator = document.createElement('div');
     const cardCreated = document.createElement('div');
     const cardDue = document.createElement('div');
+    const cardAddToDo = document.createElement('button');
     const cardToDos = document.createElement('div');
     const cardDesc = document.createElement('div');
     // add text to everything
     cardDelete.textContent = 'X';
+    cardAddToDo.textContent = 'Add ToDo';
     cardProject.textContent = `${project.projName}`;
     cardCreator.textContent = `${project.creator}`;
     cardCreated.textContent = `${project.created}`;
@@ -25,8 +27,9 @@ export default function createProjectUI(project){
     cardBox.appendChild(cardCreator);
     cardBox.appendChild(cardCreated);
     cardBox.appendChild(cardDue);
+    cardBox.appendChild(cardAddToDo);
     cardBox.appendChild(cardToDos);
     cardBox.appendChild(cardDesc);
-    
+
     return cardBox;
 }
